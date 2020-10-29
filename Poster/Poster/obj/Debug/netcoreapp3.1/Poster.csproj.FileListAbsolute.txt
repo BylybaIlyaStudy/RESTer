@@ -1,0 +1,13 @@
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\bin\Debug\netcoreapp3.1\Poster.exe
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\bin\Debug\netcoreapp3.1\Poster.deps.json
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\bin\Debug\netcoreapp3.1\Poster.runtimeconfig.json
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\bin\Debug\netcoreapp3.1\Poster.runtimeconfig.dev.json
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\bin\Debug\netcoreapp3.1\Poster.dll
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\bin\Debug\netcoreapp3.1\Poster.pdb
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\obj\Debug\netcoreapp3.1\Poster.AssemblyInfoInputs.cache
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\obj\Debug\netcoreapp3.1\Poster.AssemblyInfo.cs
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\obj\Debug\netcoreapp3.1\Poster.csproj.CoreCompileInputs.cache
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\obj\Debug\netcoreapp3.1\Poster.dll
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\obj\Debug\netcoreapp3.1\Poster.pdb
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\obj\Debug\netcoreapp3.1\Poster.genruntimeconfig.cache
+C:\Users\bylyba.ilia\source\repos\Poster\Poster\obj\Debug\netcoreapp3.1\Poster.csprojAssemblyReference.cache
