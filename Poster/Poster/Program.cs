@@ -45,55 +45,60 @@ namespace Poster
                         Console.WriteLine("выход...");
                         break;
                     default:
+                        method = "err";
                         Console.WriteLine("ошибка");
                         break;
                 }
 
                 if (method == "e") break;
 
-                Console.Write("username: ");
-                string username = Console.ReadLine();
-
-                Console.Write("version: ");
-                string version = Console.ReadLine();
-
-                Console.Write("os: ");
-                string os = Console.ReadLine();
-
-                if (username == "") username = "default";
-                if (version == "") version = "n/a";
-                if (os == "") os = "n/a";
-
-                Console.WriteLine($"user: {username}, {version}, {os}");
-
-                UserStatistics user = new UserStatistics(username, DateTime.Now, version, os);
-
-                string data = JsonSerializer.Serialize<UserStatistics>(user);
-
-                Console.WriteLine(data);
-
-                // преобразуем данные в массив байтов
-                byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
-                // устанавливаем тип содержимого - параметр ContentType
-                request.ContentType = "application/json";
-                // Устанавливаем заголовок Content-Length запроса - свойство ContentLength
-                request.ContentLength = byteArray.Length;
-
-                //записываем данные в поток запроса
-                using (Stream dataStream = request.GetRequestStream())
+                if (method != "err")
                 {
-                    dataStream.Write(byteArray, 0, byteArray.Length);
-                }
 
-                WebResponse response = request.GetResponse();
-                using (Stream stream = response.GetResponseStream())
-                {
-                    using StreamReader reader = new StreamReader(stream);
-                    Console.WriteLine(reader.ReadToEnd());
+                    Console.Write("username: ");
+                    string username = Console.ReadLine();
+
+                    Console.Write("version: ");
+                    string version = Console.ReadLine();
+
+                    Console.Write("os: ");
+                    string os = Console.ReadLine();
+
+                    if (username == "") username = "default";
+                    if (version == "") version = "n/a";
+                    if (os == "") os = "n/a";
+
+                    Console.WriteLine($"user: {username}, {version}, {os}");
+
+                    UserStatistics user = new UserStatistics(username, DateTime.Now, version, os);
+
+                    string data = JsonSerializer.Serialize<UserStatistics>(user);
+
+                    Console.WriteLine(data);
+
+                    // преобразуем данные в массив байтов
+                    byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
+                    // устанавливаем тип содержимого - параметр ContentType
+                    request.ContentType = "application/json";
+                    // Устанавливаем заголовок Content-Length запроса - свойство ContentLength
+                    request.ContentLength = byteArray.Length;
+
+                    //записываем данные в поток запроса
+                    using (Stream dataStream = request.GetRequestStream())
+                    {
+                        dataStream.Write(byteArray, 0, byteArray.Length);
+                    }
+
+                    WebResponse response = request.GetResponse();
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        using StreamReader reader = new StreamReader(stream);
+                        Console.WriteLine(reader.ReadToEnd());
+                    }
+                    response.Close();
+                    Console.WriteLine("Запрос выполнен...");
+                    Thread.Sleep(500);
                 }
-                response.Close();
-                Console.WriteLine("Запрос выполнен...");
-                Thread.Sleep(500);
             }
         }
     }
